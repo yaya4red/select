@@ -1,13 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="gotop.css">
+	<link rel="stylesheet" type="text/css" href="select.css">
 </head>
 <body>
-	<div>
-		hello world!
+	<div class="content">
+		<div class="head">
+			This is select exsrcise.
+		</div>
+		<select>
+			<option selected="selected" disabled="disabled">Select a color</option>
+		  <option value="1">Red</option>
+		  <option value="2">Yellow</option>
+		  <option value="3">Blue</option>
+		  <option value="4">Pink</option>
+		</select>
+		<button name="add">add Pink</button>
+		<button name="remove">remove Pink</button>
+		<div>
+			<div class="color red" name="1">Red</div>
+			<div class="color yellow" name="2">Yellow</div>
+			<div class="color blue" name="3">Blue</div>
+			<div class="color pink" name="4">Pink</div>
+		</div>
 	</div>
 	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-	<script src="gotop.js"></script>
+	<script src="select.js"></script>
 </body>
 </html>
