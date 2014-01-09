@@ -1,30 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" type="text/css" href="chosen.min.css">
 	<link rel="stylesheet" type="text/css" href="select.css">
 </head>
 <body>
 	<div class="content">
-		<div class="head">
-			This is select exsrcise.
+		<div class="first">
+			<div class="head">
+				This is original select.
+			</div>
+			<select>
+				<option selected="selected" disabled="disabled">Select a color</option>
+			  <option value="1">Red</option>
+			  <option value="2">Yellow</option>
+			  <option value="3">Blue</option>
+			  <option value="4">Pink</option>
+			</select>
+			<button name="add1">add Pink</button>
+			<button name="remove1">remove Pink</button>
+			<div>
+				<div class="color red" name="1">Red</div>
+				<div class="color yellow" name="2">Yellow</div>
+				<div class="color blue" name="3">Blue</div>
+				<div class="color pink" name="4">Pink</div>
+			</div>
 		</div>
-		<select>
-			<option selected="selected" disabled="disabled">Select a color</option>
-		  <option value="1">Red</option>
-		  <option value="2">Yellow</option>
-		  <option value="3">Blue</option>
-		  <option value="4">Pink</option>
-		</select>
-		<button name="add">add Pink</button>
-		<button name="remove">remove Pink</button>
-		<div>
-			<div class="color red" name="1">Red</div>
-			<div class="color yellow" name="2">Yellow</div>
-			<div class="color blue" name="3">Blue</div>
-			<div class="color pink" name="4">Pink</div>
+		<div class="second">
+			<div class="head">
+				This is chosen select.
+			</div>
+			<select data-placeholder="Choose a Color..." class="chosen-select" style="width:150px;" tabindex="2">
+			  <option value="Red">Red</option>
+			  <option value="Yellow">Yellow</option>
+			  <option value="Blue">Blue</option>
+			  <option value="Pink">Pink</option>
+			</select>
+			<button name="add">add Pink</button>
+			<button name="remove">remove Pink</button>
+			<div>
+				<div class="color red" name="Red">Red</div>
+				<div class="color yellow" name="Yellow">Yellow</div>
+				<div class="color blue" name="Blue">Blue</div>
+				<div class="color pink" name="Pink">Pink</div>
+			</div>
 		</div>
 	</div>
-	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-	<script src="select.js"></script>
+	<script src="http://code.jquery.com/jquery-1.9.1.js" type="text/javascript"></script>
+	<script src="chosen.jquery.min.js" type="text/javascript"></script>
+	<script src="select.js" type="text/javascript"></script>
+	<script type="text/javascript">
+    var config = {
+      '.chosen-select'           : {},
+      '.chosen-select-deselect'  : {allow_single_deselect:true},
+      '.chosen-select-no-single' : {disable_search_threshold:10},
+      '.chosen-select-no-results': {no_results_text:'Oops, nothing found!'},
+      '.chosen-select-width'     : {width:"95%"}
+    }
+    for (var selector in config) {
+      $(selector).chosen(config[selector]);
+    }
+  </script>
 </body>
 </html>
